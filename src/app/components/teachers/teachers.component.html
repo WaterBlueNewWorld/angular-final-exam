@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <form onsubmit="event.preventDefault()" class="box">
+                    <h2>Insert new Teacher</h2>
+                    <hr>
+                    <div class="card-body">
+                        <div class="row">
+                               <div class="col">
+                                    <label for="name">Name: </label>
+                                    <input [(ngModel)]="name" type="text" placeholder="Name">
+                               </div>
+                               <div class="col">
+                                 <label for="address">Address: </label>
+                                  <input [(ngModel)]="address" type="text" placeholder="address">
+                              </div>
+                              <div class="col">
+                                 <label for="tel">Phone: </label>
+                                  <input [(ngModel)]="tel" type="text" placeholder="phone">
+                              </div>
+                              <div class="col">
+                                <label for="id_group">Group: </label>
+                                 <input [(ngModel)]="id_group" type="text" placeholder="Group">
+                                 <br>
+                              </div>
+                              <br>
+                              <div class="col ">
+                                <br>
+                                <input type="submit" name="" value="Save" (click)="insertTeacher(name, address, tel, id_group)">
+                              </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<app-footer></app-footer>
