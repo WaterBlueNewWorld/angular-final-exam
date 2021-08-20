@@ -22,6 +22,7 @@ import { NewComponentP } from './components/management/new/new.component';
 import { UpdateComponentP } from './components/management/update/update.component';
 import { DeleteComponentP } from './components/management/delete/delete.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,6 @@ import { DeleteComponentP } from './components/management/delete/delete.componen
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
-
   ],
   providers: [
     ApiRequestsService,

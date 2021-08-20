@@ -1,1 +1,28 @@
-<p>new works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>New Group</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="g_name">Name: </label>
+                <input [(ngModel)]="g_name" name="m_name" type="text" placeholder="Name">
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" value="Save" (click)="insertGroup(g_name)" >
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

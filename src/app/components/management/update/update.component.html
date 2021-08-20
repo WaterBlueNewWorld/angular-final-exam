@@ -1,1 +1,46 @@
-<p>update works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>Update Employee</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="idP">Employee id: </label>
+                <input [(ngModel)]="idP" name="idP" type="number" placeholder="Teacher id">
+              </div>
+              <div class="row">
+                <label for="m_name">Name: </label>
+                <input [(ngModel)]="m_name" name="m_name" type="text" placeholder="Name">
+              </div>
+              <div class="row">
+                <label for="telephone">Phone: </label>
+                <input [(ngModel)]="telephone" name="telephone" type="number" placeholder="Phone">
+              </div>
+              <div class="row">
+                <label for="email">E-mail: </label>
+                <input [(ngModel)]="email" name="email" type="text" placeholder="E-mail">
+              </div>
+              <div class="row">
+                <label for="position">Position: </label>
+                <input [(ngModel)]="position" name="position" type="text" placeholder="Position">
+              </div>
+              <div class="row">
+                <label for="address">Address: </label>
+                <input [(ngModel)]="m_address" name="address" type="text" placeholder="Address">
+                <br>
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" value="Save" (click)="updatePersonnel(idP, m_name, telephone, email, position, m_address)">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

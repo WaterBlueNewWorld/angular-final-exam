@@ -1,1 +1,30 @@
-<p>update works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>Update Group</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="idG">Group id: </label>
+                <input [(ngModel)]="idG" name="idG" type="number" placeholder="Group id">
+              </div>
+              <div class="row">
+                <label for="g_name">Name: </label>
+                <input [(ngModel)]="g_name" name="g_name" type="text" placeholder="Name">
+                <br>
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" value="Save" (click)="updateGroup(idG, g_name)">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

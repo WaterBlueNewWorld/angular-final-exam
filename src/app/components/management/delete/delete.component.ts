@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiRequestsService } from 'src/app/api-requests.service';
 
 @Component({
   selector: 'app-delete',
@@ -6,8 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponentP implements OnInit {
+  public m_id;
 
-  constructor() { }
+  constructor(
+    public db:ApiRequestsService,
+    private  router: Router,
+  ) { }
+
+  deletePersonnel(id){
+    let dPersonnel = {
+      "idP": id
+    }
+
+    this.db.deletePersonnel(dPersonnel).subscribe((res => {
+      console.log(res);
+      window.history.back();
+    }));
+  }
 
   ngOnInit(): void {
   }

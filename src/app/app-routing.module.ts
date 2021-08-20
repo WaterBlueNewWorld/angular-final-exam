@@ -11,6 +11,9 @@ import { DeleteComponentT } from "./components/teachers/delete/delete.component"
 import {NewComponentP} from "./components/management/new/new.component";
 import {UpdateComponentP} from "./components/management/update/update.component";
 import {DeleteComponentP} from "./components/management/delete/delete.component";
+import { NewComponent } from "./components/groups/new/new.component";
+import { UpdateComponent } from "./components/groups/update/update.component";
+import { DeleteComponent } from "./components/groups/delete/delete.component";
 
 const routes: Routes = [
   {
@@ -19,7 +22,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:"home",
+    path:"schools",
     component:HomeComponent,
     children: [
       {
@@ -38,13 +41,13 @@ const routes: Routes = [
     component:GroupsComponent,
     children:[
       {
-        path: "new", component: HomeComponent
+        path: "new", component: NewComponent
       },
       {
-        path: "update", component: HomeComponent
+        path: "update", component: UpdateComponent
       },
       {
-        path: "delete", component: HomeComponent
+        path: "delete", component: DeleteComponent
       }
     ]
   },

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {TeacherList} from "./teachers";
 import {PersonnelList} from "./personnel";
+import {GroupList} from "./groups";
+import {SchooolList} from "./schools";
 
 @Injectable({
   providedIn: 'root'
@@ -59,10 +61,10 @@ export class ApiRequestsService {
     return this.http.post(this.requestUrl + '/api/newPersonnel', data);
   }
   public deletePersonnel(data){
-    return this.http.delete(this.requestUrl + '/api/deletePersonnel', data);
+    return this.http.post(this.requestUrl + '/api/deletePersonnel', data);
   }
   public updatePersonnel(data){
-    return this.http.patch(this.requestUrl + '/api/updatePersonnel', data);
+    return this.http.post(this.requestUrl + '/api/updatePersonnel', data);
   }
 
   /*
@@ -70,7 +72,7 @@ export class ApiRequestsService {
    */
 
   public getGroups(){
-    return this.http.get(this.requestUrl + '/api/getGrpups');
+    return this.http.get<GroupList[]>(this.requestUrl + '/api/getGroups');
   }
 
   public newGroup(data){
@@ -78,11 +80,15 @@ export class ApiRequestsService {
   }
 
   public deleteGroup(data){
-    return this.http.delete(this.requestUrl + '/api/deleteGroup', data);
+    return this.http.post(this.requestUrl + '/api/deleteGroup', data);
   }
 
   public updateGroup(data){
-    return this.http.patch(this.requestUrl + '/api/updateGroup', data);
+    return this.http.post(this.requestUrl + '/api/updateGroup', data);
   }
 
+
+  public getSchools(){
+    return this.http.get<SchooolList[]>(this.requestUrl + '/api/getSchools');
+  }
 }

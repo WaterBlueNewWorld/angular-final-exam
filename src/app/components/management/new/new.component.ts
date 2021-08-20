@@ -30,6 +30,7 @@ export class NewComponentP implements OnInit {
 
     this.db.newPersonnel(newPersonnel).subscribe((res => {
       console.log(res);
+      window.history.back();
     }));
   }
 

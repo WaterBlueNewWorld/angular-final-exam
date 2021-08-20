@@ -1,1 +1,26 @@
-<p>delete works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>Delete Group</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="idG">Group Id: </label>
+                <input [(ngModel)]="idG" name="idG" type="number" placeholder="Group id">
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" value="Save" (click)="deleteGroup(idG)" >
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

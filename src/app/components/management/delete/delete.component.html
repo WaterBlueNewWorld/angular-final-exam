@@ -1,1 +1,26 @@
-<p>delete works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>Delete Employee</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="m_id">Teacher id: </label>
+                <input [(ngModel)]="m_id" name="m_id" type="number" placeholder="Teacher id">
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" (click)="deletePersonnel(m_id)">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

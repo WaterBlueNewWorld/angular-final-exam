@@ -1,29 +1,41 @@
 <app-header></app-header>
 <div class="container">
+  <div *ngIf="route.children.length === 0">
+    <br />
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <form onsubmit="event.preventDefault()" class="box">
-                    <h2>New Group</h2>
-                    <hr>
-                    <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <label for="nombre">Name: </label>
-                            <input type="text"placeholder="Name" name="nombre">
-                          </div>
-                          <div class="row">
-                            <input type="submit" name="" value="Save" href="#">
-                          </div>
-                        </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-primary" (click)="navigateNew()">New</button>
+      </div>
 
-                    </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-info" (click)="navigateUpdate()">Update</button>
+      </div>
 
-                 </form>
-
-            </div>
-        </div>
-
+      <div class="col-md-2">
+        <button class="btn btn-outline-danger" (click)="navigateDelete()">Delete</button>
+      </div>
     </div>
+    <br />
+    <div class="row">
+      <table class="table table-dark"  style="margin-bottom: 200px;">
+        <thead>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let group of groups">
+          <td *ngFor="let col of index">
+            {{group[col]}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
 <app-footer></app-footer>
+<router-outlet></router-outlet>
