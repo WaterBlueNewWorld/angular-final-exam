@@ -5,11 +5,18 @@ import { ManagementComponent } from './components/management/management.componen
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NewComponentT } from "./components/teachers/new/new.component";
+import { UpdateComponentT } from "./components/teachers/update/update.component";
+import { DeleteComponentT } from "./components/teachers/delete/delete.component";
+import {NewComponentP} from "./components/management/new/new.component";
+import {UpdateComponentP} from "./components/management/update/update.component";
+import {DeleteComponentP} from "./components/management/delete/delete.component";
 
 const routes: Routes = [
   {
     path:"",
-    component:LoginComponent
+    component:LoginComponent,
+    pathMatch: 'full'
   },
   {
     path:"home",
@@ -46,13 +53,13 @@ const routes: Routes = [
     component:ManagementComponent,
     children: [
       {
-        path: "new", component: HomeComponent
+        path: "new", component: NewComponentP
       },
       {
-        path: "update", component: HomeComponent
+        path: "update", component: UpdateComponentP
       },
       {
-        path: "delete", component: HomeComponent
+        path: "delete", component: DeleteComponentP
       }
     ]
   },
@@ -61,13 +68,13 @@ const routes: Routes = [
     component:TeachersComponent,
     children: [
       {
-        path: "new", component: HomeComponent
+        path: "new", component: NewComponentT,
       },
       {
-        path: "update", component: HomeComponent
+        path: "update", component: UpdateComponentT
       },
       {
-        path: "delete", component: HomeComponent
+        path: "delete", component: DeleteComponentT
       }
     ]
   },

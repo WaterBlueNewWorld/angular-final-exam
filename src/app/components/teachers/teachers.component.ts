@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiRequestsService} from "../../api-requests.service";
+import {TeacherList} from "../../teachers";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-teachers',
@@ -8,46 +10,34 @@ import {ApiRequestsService} from "../../api-requests.service";
 })
 export class TeachersComponent implements OnInit {
 
-  public name;
-  public address;
-  public tel;
-  public id_group;
-
   constructor(
+    private router: Router,
+    public route: ActivatedRoute,
     public db:ApiRequestsService
   ) { }
 
-  insertTeacher(name, address, tel, id_group){
-    let nTeacher = {
-      "name": name,
-      "address": address,
-      "tel": tel,
-      "id_group": id_group
-    }
+  columns = ['ID', 'Teacher name', 'Address', 'Telephone', 'Group'];
+  index = ['id', 'teacher_name', 'teacher_address', 'telephone', 'id_group'];
 
-    this.db.newTeacher(nTeacher).subscribe((res => {
-      console.log(res);
-      window.history.back();
-    }));
+  teachers : TeacherList[] = [];
+
+  navigateNew() {
+    this.router.navigateByUrl('/teachers/new');
+  }
+  navigateUpdate() {
+    this.router.navigateByUrl('/teachers/update');
+  }
+  navigateDelete() {
+    this.router.navigateByUrl('/teachers/delete');
   }
 
-  mutableTeacher(id, name, address, tel, id_group){
-    let mTeacher = {
-      "id": id,
-      "name": name,
-      "address": address,
-      "tel": tel,
-      "id_group": id_group
-    }
-
-    this.db.updateTeacher(mTeacher).subscribe((res => {
-      console.log(res);
-      window.history.back();
-    }));
-  }
 
   ngOnInit(): void {
-
+    this.db.getTeachers().subscribe((res) => {
+      this.teachers = res;
+    },
+      (error) => console.error(error)
+    );
   }
 
 }

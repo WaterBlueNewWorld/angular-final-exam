@@ -1,85 +1,41 @@
 <app-header></app-header>
 <div class="container">
+  <div *ngIf="route.children.length === 0">
+    <br />
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <form onsubmit="event.preventDefault()" class="box">
-                    <h2>New personnel</h2>
-                    <hr>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                              <label for="nombre">Names: </label>
-                               <input type="text"placeholder="Name" name="nombre">
-                             </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-primary" (click)="navigateNew()">New</button>
+      </div>
 
-                               <div class="col">
-                                 <label for="SchoolN"> EDUID: </label>
-                                 <input  id="numberS" type="text"placeholder="School N" name="schoolN">
-                               </div>
+      <div class="col-md-2">
+        <button class="btn btn-outline-info" (click)="navigateUpdate()">Update</button>
+      </div>
 
-                               <div class="col">
-                                 <label for="adress">Adress: </label>
-                                  <input type="text"placeholder="adress" name="adress">
-                              </div>
-
-                              <div class="col">
-                                 <label for="phone">Phone: </label>
-                                  <input type="text"placeholder="phone" name="phone">
-                             </div>
-
-                            <div class="col">
-                                <label for="zone">Zone: </label>
-                                 <input type="text"placeholder="zone" name="zone">
-                            </div>
-
-                            <div class="col">
-                                <label for="director">Director: </label>
-                                 <input type="text"placeholder="director" name="director">
-                            </div>
-                            <div class="col">
-                                <input type="submit" name="" value="Save" href="#">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                 </form>
-
-            </div>
-        </div>
-
-
+      <div class="col-md-2">
+        <button class="btn btn-outline-danger" (click)="navigateDelete()">Delete</button>
+      </div>
     </div>
-<br>
-    <!-----
+    <br />
     <div class="row">
-        <table class="table table-dark"  style="margin-bottom: 200px;">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Adress</th>
-                <th scope="col">Phone</th>
-                <th scope="col">EduID</th>
-                <th scope="col">Zone</th>
-                <th scope="col">Director</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr >
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+      <table class="table table-dark"  style="margin-bottom: 200px;">
+        <thead>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let employee of personnel">
+          <td *ngFor="let col of index">
+            {{employee[col]}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    ------>
+  </div>
 </div>
 
-
 <app-footer></app-footer>
+<router-outlet></router-outlet>
