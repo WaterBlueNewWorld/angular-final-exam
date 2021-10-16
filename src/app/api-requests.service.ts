@@ -91,4 +91,16 @@ export class ApiRequestsService {
   public getSchools(){
     return this.http.get<SchooolList[]>(this.requestUrl + '/api/getSchools');
   }
+
+  public newSchool(data){
+    return this.http.post(this.requestUrl + '/api/newSchool', data);
+  }
+
+  public deleteSchool(data){
+    return this.http.post(this.requestUrl + '/api/deleteSchool', data);
+  }
+
+  public login(data){
+    return this.http.post(this.requestUrl + '/api/login', data);
+  }
 }

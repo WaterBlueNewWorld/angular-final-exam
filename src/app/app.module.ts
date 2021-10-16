@@ -21,6 +21,8 @@ import { DeleteComponentT } from './components/teachers/delete/delete.component'
 import { NewComponentP } from './components/management/new/new.component';
 import { UpdateComponentP } from './components/management/update/update.component';
 import { DeleteComponentP } from './components/management/delete/delete.component';
+import { NewComponentS } from "./home/new/new.component";
+import {DeleteComponentS} from './home/delete/delete.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { DeleteComponentP } from './components/management/delete/delete.componen
     DeleteComponentT,
     NewComponentP,
     UpdateComponentP,
-    DeleteComponentP
+    DeleteComponentP,
+    NewComponentS,
+    DeleteComponentS
   ],
   imports: [
     BrowserModule,

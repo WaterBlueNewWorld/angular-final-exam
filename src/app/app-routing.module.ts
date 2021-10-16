@@ -14,6 +14,8 @@ import {DeleteComponentP} from "./components/management/delete/delete.component"
 import { NewComponent } from "./components/groups/new/new.component";
 import { UpdateComponent } from "./components/groups/update/update.component";
 import { DeleteComponent } from "./components/groups/delete/delete.component";
+import {NewComponentS} from "./home/new/new.component";
+import {DeleteComponentS} from './home/delete/delete.component';
 
 const routes: Routes = [
   {
@@ -26,13 +28,10 @@ const routes: Routes = [
     component:HomeComponent,
     children: [
       {
-        path: "new", component: HomeComponent
+        path: "new", component: NewComponentS
       },
       {
-        path: "update", component: HomeComponent
-      },
-      {
-        path: "delete", component: HomeComponent
+        path: "delete", component: DeleteComponentS
       }
     ]
   },

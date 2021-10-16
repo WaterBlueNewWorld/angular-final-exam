@@ -3,3 +3,7 @@ header{
   bottom: 0;
   width: 100%;
 }
+
+.bg-dark{
+  color: #51247a;
+}

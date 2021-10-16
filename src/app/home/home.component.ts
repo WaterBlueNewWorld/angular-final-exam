@@ -21,13 +21,10 @@ export class HomeComponent implements OnInit {
   schools: SchooolList[] = [];
 
   navigateNew() {
-    this.router.navigateByUrl('/groups/new');
-  }
-  navigateUpdate() {
-    this.router.navigateByUrl('/groups/update');
+    this.router.navigateByUrl('/schools/new');
   }
   navigateDelete() {
-    this.router.navigateByUrl('/groups/delete');
+    this.router.navigateByUrl('/schools/delete');
   }
 
   ngOnInit(): void {

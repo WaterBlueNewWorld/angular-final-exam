@@ -1,0 +1,26 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form onsubmit="event.preventDefault()" class="box">
+          <h2>Delete School</h2>
+          <hr>
+          <div class="card-body">
+            <div class="row">
+              <div class="row">
+                <label for="idS">School id: </label>
+                <input [(ngModel)]="idS" name="idS" type="number" placeholder="School id">
+              </div>
+              <br>
+              <div class="col">
+                <br>
+                <input type="submit" name="" (click)="deleteSchool(idS)">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
